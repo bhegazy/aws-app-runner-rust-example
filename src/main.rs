@@ -16,7 +16,7 @@ async fn hello(req: HttpRequest) -> &'static str {
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
 
-    std::env::set_var("RUST_LOG", "actix_web=info");
+    std::env::set_var("RUST_LOG", "actix_web=debug");
     env_logger::init();
     // Get the port number to listen on.
     let port = env::var("PORT")
