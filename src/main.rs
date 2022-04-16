@@ -1,4 +1,4 @@
-use actix_web::{web, App, HttpServer, middleware, HttpRequest};
+use actix_web::{web, App, HttpServer, middleware::{Logger}, HttpRequest};
 use std::env;
 
 
@@ -27,7 +27,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             // enable logger
-            .wrap(middleware::Logger::default())
+            .wrap(Logger::default())
             .service(web::resource("/index.html").to(index))
             .service(web::resource("/").to(index))
             .service(web::resource("/hello").to(hello))

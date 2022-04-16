@@ -2,11 +2,7 @@ FROM public.ecr.aws/docker/library/rust:1.60 as builder
 
 RUN USER=root cargo new --bin aws-app-runner-rust-example
 WORKDIR /aws-app-runner-rust-example
-COPY ./Cargo.toml ./Cargo.toml
-RUN cargo build --release
-RUN rm src/*.rs
-
-ADD . ./
+COPY . .
 RUN cargo build --release
 
 
