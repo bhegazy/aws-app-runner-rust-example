@@ -4,7 +4,7 @@ use std::env;
 
 async fn index(req: HttpRequest) -> &'static str {
     println!("User-Agent: {:?}", req.headers().get("User-Agent").unwrap());
-    "Welcome to Rust AWS App Runner Example."
+    "Welcome to Rust AWS App Runner Example!!"
 }
 
 async fn hello(req: HttpRequest) -> &'static str {
